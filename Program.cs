@@ -77,7 +77,7 @@ namespace hedgehog
             if(input[firstGroupIndex] == input[secondGroupIndex]) return input[firstGroupIndex];
             //Якщо кількість їжачків що лишилася після занулення кількості їжачків певного небажаного кольору ділиться на 3
             //то досягненя мети є можливим, в іншому випадку ні
-            if ((input[firstGroupIndex] - input[secondGroupIndex]) % 3 != 0)
+            if (Math.Abs(input[firstGroupIndex] - input[secondGroupIndex]) % 3 != 0)
                 return -1;
             //одна зустріч це зустріч їжачка бажаного кольору і того що лишилося, вони перефарбовуються в дефіцитний колір
             //потім ці ж два їжаки зустрічаються з тими їжаками що лишилися небажаного кольору
