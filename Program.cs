@@ -77,7 +77,7 @@ namespace hedgehog
             if(input[firstGroupIndex] == input[secondGroupIndex]) return input[firstGroupIndex];
             //Якщо кількість їжачків що лишилася після занулення кількості їжачків певного небажаного кольору ділиться на 3
             //то досягненя мети є можливим, в іншому випадку ні
-            if (input[firstGroupIndex] - input[secondGroupIndex] % 3 != 0)
+            if ((input[firstGroupIndex] - input[secondGroupIndex]) % 3 != 0)
                 return -1;
             //одна зустріч це зустріч їжачка бажаного кольору і того що лишилося, вони перефарбовуються в дефіцитний колір
             //потім ці ж два їжаки зустрічаються з тими їжаками що лишилися небажаного кольору
@@ -102,20 +102,5 @@ namespace hedgehog
             }
             return (firstGroupIndex, secondGroupIndex);
         }
-
-        //static int CalcMeetingsAfterNullGroup(int[] input, int firstGroupIndex, int secondGroupIndex, int wishedColour)
-        //{
-        //    int minCountMeetings = 0;
-        //    int min = Math.Min(input[firstGroupIndex], input[secondGroupIndex]);
-        //    input[firstGroupIndex] -= min;
-        //    input[secondGroupIndex] -= min;
-        //    input[wishedColour] += 2 * min;
-        //    minCountMeetings += min;
-        //    int remainedGroupIndex = (input[firstGroupIndex] > 0) ? firstGroupIndex : secondGroupIndex;
-            
-        //    if (input[remainedGroupIndex] % 3 != 0) return -1;
-        //    minCountMeetings += input[remainedGroupIndex];
-        //    return minCountMeetings;
-        //}
     }
 }
